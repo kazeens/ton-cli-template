@@ -1,0 +1,23 @@
+
+build
+docker run --rm -it -v /Users/nick/Documents/Projects/TonFunClessons_ru/docker_cli/test_project:/code toncli-local build
+
+test
+docker run --rm -it -v /Users/nick/Documents/Projects/TonFunClessons_ru/docker_cli/test_project:/code toncli-local run_tests
+
+deploy-update-libs
+docker run --rm -it -v /Users/nick/Documents/Projects/TonFunClessons_ru/docker_cli/test_project:/code -v /Users/nick/Documents/Projects/TonFunClessons_ru/docker_cli/test_project/toncli_config:/root/.config toncli-local update_libs
+
+deploy
+
+docker run --rm -it -v /Users/nick/Documents/Projects/TonFunClessons_ru/docker_cli/test_project/wallet:/code -v /Users/nick/Documents/Projects/TonFunClessons_ru/docker_cli/test_project/toncli_config/:/root/.config toncli-local deploy --net testnet
+
+SEND FIFT BOG
+docker run --rm -it -v /Users/nick/Documents/Projects/TonFunClessons_ru/docker_cli/test_project/wallet:/code -v /Users/nick/Documents/Projects/TonFunClessons_ru/docker_cli/test_project/toncli_config/:/root/.config toncli-local send -n testnet -a 0.03 --address "kQDLcBAEyPQ8Yig8UX5XABjZJ6by0vMF51Os2N6o_agD0jyM" --body ./fift/try.fif
+
+RUN TESTS
+docker run --rm -it -v /Users/nick/Documents/Projects/TonFunClessons_ru/docker_cli/test_project/wallet:/code -v /Users/nick/Documents/Projects/TonFunClessons_ru/docker_cli/test_project/toncli_config/:/root/.config toncli-local run_tests
+
+GET METHOD INVOCATION
+docker run --rm -it -v /Users/nick/Documents/Projects/TonFunClessons_ru/docker_cli/test_project/wallet:/code -v /Users/nick/Documents/Projects/TonFunClessons_ru/docker_cli/test_project/toncli_config/:/root/.config toncli-local get get_total
+
